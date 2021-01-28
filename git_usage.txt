@@ -1,0 +1,56 @@
+
+
+// 初始化 git 仓库
+git init
+
+// 查看 git 状态
+git status
+
+// 显示修改过的文件
+git diff
+
+// 添加文件到 git
+git add 文件
+
+// 提交添加的文件
+git commit -m '备注'
+
+// 显示最近提交操作
+git log
+git log --pretty=oneline
+
+// 跳转到上一个版本
+git reset --hard HEAD^
+
+// 跳到指定的版本
+git reset --hard commit_id(版本的ID)
+
+// 查看操作记录
+git reflog
+
+// 从暂存区拿出文件（使用了 add 提交）
+git restore --staged <file>(文件名)
+// 放弃工作目录中的更改
+git restore <file>(文件名)
+// 如提交到版本库（commit 提交）那就只能考虑  git reset --hard xxx  退回到以前版本
+git restore <file>(文件名)
+
+
+// 对比最新版本和本地的区别
+git diff HEAD -- readme.txt
+HEAD 指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id
+
+
+
+//在用户主目录下生成一个ssh-key密钥
+ssh-keygen -t rsa -C "youremail@example.com"
+
+你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，
+由于这个Key也不是用于军事目的，所以也无需设置密码。
+如果一切顺利的话，可以在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，
+这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
+
+
+
+
+
