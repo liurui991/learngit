@@ -1,4 +1,5 @@
 
+如查看的文件有大量时 “空格” 为下一页，字母 “q” 是退出
 
 // 初始化 git 仓库
 git init
@@ -18,6 +19,8 @@ git commit -m '备注'
 // 显示最近提交操作
 git log
 git log --pretty=oneline
+// 查看历史分支
+git log --graph --pretty=oneline --abbrev-commit
 
 // 跳转到上一个版本
 git reset --hard HEAD^
@@ -81,5 +84,13 @@ git clone 网址
 
 合并某分支到当前分支：git merge <name>
 
+// 合并到当前分支，查看生成的历史有分支
+// 合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，
+// 而 fast forward 合并就看不出来曾经做过合并（默认使用这个）
+git merge --no-ff -m "merge with no-ff" dev
+
 删除分支：git branch -d <name>
+
+查看分支合并图：git log --graph 
+
 
