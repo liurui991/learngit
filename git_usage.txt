@@ -94,3 +94,17 @@ git merge --no-ff -m "merge with no-ff" dev
 查看分支合并图：git log --graph 
 
 
+// “储藏”当前工作现场，等以后恢复现场后继续工作：
+git stash
+//恢复“储藏”的当前工作现场，有两个办法：
+一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；
+另一种方式是用git stash pop，恢复的同时把stash内容也删了：
+git stash apply
+git stash pop
+你可以多次stash，恢复的时候，先用git stash list查看，然后恢复指定的stash，用命令：
+$ git stash apply stash@{0}
+
+// Git专门提供了一个cherry-pick命令，让我们能复制一个特定的提交到当前分支：
+git cherry-pick <commit>		// 提交的修改“复制”到当前分支，避免重复劳动。
+
+
